@@ -30,4 +30,16 @@ export class CartService {
     })
     return grandTotal;
   }
+  removeCartItem(product: any){
+    this.cartItemList.map((a:any, index:any)=>{
+      if(product.id=== a.id){
+        this.cartItemList.splice(index,1);
+      }
+    })
+    this.productList.next(this.cartItemList);
+  }
+  removeAllCart(){
+    this.cartItemList = []
+    this.productList.next(this.cartItemList);
+  }
 }
