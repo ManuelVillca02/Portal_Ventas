@@ -9,9 +9,10 @@
                 <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
             </div>
             <span class="fas fa-search search-icon"></span>
-
+            <label style="font-size: 30px;">{{ emailSession }}</label>
 
         </div>
+        
         <button routerLink="cart" class="btn btn-dark">
             <i style="font-size: 30px;" class="fas fa-shopping-cart"></i>
             <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
