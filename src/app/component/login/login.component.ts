@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('email', res.email); 
         sessionStorage.setItem('name', res.first_name);
         console.log(sessionStorage.getItem("email")); 
+      }else{
+        alert("Login Wrong, check your password or email");
       }
     },err=>{
       alert("wrong");
