@@ -18,7 +18,7 @@ import { SignupComponent } from './component/signup/signup.component';
     HeaderComponent,
     CartComponent,
     ProductsComponent,
-    FiltersPipe
+    FiltersPipe,
     LoginComponent,
     SignupComponent
   ],
