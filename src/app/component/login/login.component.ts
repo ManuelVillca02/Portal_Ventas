@@ -24,13 +24,12 @@ export class LoginComponent implements OnInit {
     this.http.post<any>("http://localhost:3500/iniciar-sesion", this.loginForm.value)
     .subscribe(res=>{
       if(res.isOk==true){
-        alert("Login Successfull");
         this.router.navigate(['products']);
         sessionStorage.setItem('email', res.email); 
         sessionStorage.setItem('name', res.first_name);
-        console.log(sessionStorage.getItem("email")); 
+        sessionStorage.setItem('lname', res.last_name);
       }else{
-        alert("Login Wrong, check your password or email");
+        alert(res.msj);
       }
     },err=>{
       alert("wrong");

@@ -11,6 +11,7 @@ import { FiltersPipe } from './filter/filters.pipe';
 import { LoginComponent } from './component/login/login.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './component/signup/signup.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignupComponent } from './component/signup/signup.component';
     ProductsComponent,
     FiltersPipe,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
