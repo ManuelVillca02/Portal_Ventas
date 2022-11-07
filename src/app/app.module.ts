@@ -7,6 +7,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { CartComponent } from './component/cart/cart.component';
 import { ProductsComponent } from './component/products/products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FiltersPipe } from './filter/filters.pipe';
 import { LoginComponent } from './component/login/login.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './component/signup/signup.component';
@@ -17,6 +18,7 @@ import { SignupComponent } from './component/signup/signup.component';
     HeaderComponent,
     CartComponent,
     ProductsComponent,
+    FiltersPipe,
     LoginComponent,
     SignupComponent
   ],
@@ -24,6 +26,7 @@ import { SignupComponent } from './component/signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
