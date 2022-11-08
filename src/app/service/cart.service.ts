@@ -21,10 +21,20 @@ export class CartService {
     this.productList.next(product);
   }
   addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
+    var isEdit = false;
+    this.cartItemList.map((a:any, index:any)=>{
+      if(product.id== a.id){
+        a.quantity = a.quantity+1;
+        a.total = a.quantity*a.price;
+        isEdit=true;
+      }
+    })
+    if(!isEdit){
+      this.cartItemList.push(product);
+      this.productList.next(this.cartItemList);
+      this.getTotalPrice();
+      console.log(this.cartItemList)
+    }
   }
   getTotalPrice() : number{
     let grandTotal = 0;
