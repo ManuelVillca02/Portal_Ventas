@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       this.totalItem = res.length;
       this.emailSession =sessionStorage.getItem('email');
       this.nameSession = sessionStorage.getItem('name');
-      if(this.emailSession==''){
+      if(this.emailSession==''||this.emailSession==null){
         this.logintext = 'Login';
       }else{
         this.logintext = 'LogOut';
