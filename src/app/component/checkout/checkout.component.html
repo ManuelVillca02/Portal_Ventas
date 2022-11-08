@@ -1,0 +1,49 @@
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+    type='text/css'>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+  <div class="testbox container">
+    <h1>Your Order</h1>
+    <form >
+      <hr>
+      <label class="form-control">First Name : {{first_name}}</label>
+      <br/>
+      <label class="form-control">Last Name : {{last_name}}</label>
+      <br/>
+      <label class="form-control">Email : {{email}}</label>
+      <br/>
+    </form>
+  </div>
+<ng-container >
+    <div class="container">
+        <div class="cart-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of products; let i = index">
+                            <td>{{item.title}}</td>
+                            <td style="width: 15%;">{{item.price}}</td>
+                            <td style="width: 15%;">{{item.quantity}}</td>
+                            <td style="width: 15%;">{{item.total}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td >Descuento : 0</td>
+                            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                        </tr>
+                    </tbody>
+                    <td><button class="btn btn-success" (click)="checkoutGo()">Checkout</button></td>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
