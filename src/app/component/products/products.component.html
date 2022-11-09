@@ -20,7 +20,9 @@
         </div>
         <div class="item">
             <a (click)="filter('jewelery')">
-                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+                <img style="width: 62px; margin-top: 5px;"
+                    src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
+                    alt="">
                 <h6>Jewllery</h6>
             </a>
         </div>
@@ -31,9 +33,11 @@
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filters:searchKey:'title'">
             <div class="card col-md-3">
-                <img src="{{item.image}}" alt="">
-                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <img src="{{item.image}}" alt="" (click)=openDetailproduct(item.id)>
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.description}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
                 <button class="btn btn-dark" (click)=addtocart(item)>Add to cart</button>
             </div>
@@ -41,4 +45,3 @@
 
     </div>
 </div>
-
