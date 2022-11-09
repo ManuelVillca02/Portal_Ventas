@@ -27,6 +27,7 @@ export class DetailproductComponent implements OnInit {
             this.product = a;
 
           }
+          Object.assign(a, { quantity: 1, total: a.price });
         });
       });
 
