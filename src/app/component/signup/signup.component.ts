@@ -26,9 +26,19 @@ export class SignupComponent implements OnInit {
   signUp(){
     this.http.post<any>("http://localhost:3500/crear-usuario", this.signupForm.value)
     .subscribe(res=>{
-      alert("Signup Successfull");
-      this.signupForm.reset();
-      this.router.navigate(['login']);
+      if(this.signupForm.controls['password'].value==this.signupForm.controls['passwordConfirm'].value){
+        if(res.isOk==true){
+          alert("Signup Successfull");
+          this.signupForm.reset();
+          this.router.navigate(['login']);
+        }else{
+          alert(res.msj);
+        }
+      }else{
+        alert("The passwords are not the same");
+      }
+      
+      
     },err=>{
       alert("Something went wrong")
     })
