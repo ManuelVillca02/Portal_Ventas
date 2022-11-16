@@ -3,7 +3,7 @@
     type='text/css'>
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
-  <div class="testbox">
+  <div class="testbox container">
     <h1>Registration</h1>
     <form [formGroup]="signupForm" (ngSubmit)="signUp()">
       <hr>
@@ -13,9 +13,9 @@
       <br/>
       <input formControlName="email" class="form-control" type="text" placeholder="Email">
       <br/>
-      <input formControlName="password" class="form-control" type="text" placeholder="Password">
+      <input formControlName="password" class="form-control" type="password" placeholder="Password">
       <br/>
-      <input formControlName="passwordConfirm" class="form-control" type="text" placeholder="Confirm Password">
+      <input formControlName="passwordConfirm" class="form-control" type="password" placeholder="Confirm Password">
       <br/>
       <button type="submit" class="btn btn-dark">Register</button>
     </form>
