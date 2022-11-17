@@ -1,47 +1,62 @@
 <div class="card-top container-fluid">
     <div class="container d-flex">
-        <div class="item">
-            <a (click)="filter('')">
-                <img src="https://cdn-icons-png.flaticon.com/128/3612/3612651.png" alt="">
+        <div class="item pointer">
+            <a  (click)="filter('')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-smart-home" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#00AEE1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M19 8.71l-5.333 -4.148a2.666 2.666 0 0 0 -3.274 0l-5.334 4.148a2.665 2.665 0 0 0 -1.029 2.105v7.2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.2c0 -.823 -.38 -1.6 -1.03 -2.105" />
+                    <path d="M16 15c-2.21 1.333 -5.792 1.333 -8 0" />
+                </svg>                
                 <h6>All products</h6>
             </a>
         </div>
-        <div class="item">
+        <div class="item  pointer">
             <a (click)="filter('electronics')">
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
-                <h6>Electronics</h6>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-devices" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#00AEE1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <rect x="13" y="8" width="8" height="12" rx="1" />
+                    <path d="M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h9" />
+                    <line x1="16" y1="9" x2="18" y2="9" />
+                </svg>
+                <h6>Tecnología</h6>
             </a>
         </div>
-        <div class="item">
+        <div class="item  pointer">
             <a (click)="filter('fashion')">
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
-                <h6>Fashion</h6>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shirt" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#00AEE1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" />
+                </svg>               
+                <h6>Ropa</h6>
             </a>
         </div>
-        <div class="item">
+        <div class="item pointer">
             <a (click)="filter('jewelery')">
-                <img style="width: 62px; margin-top: 5px;"
-                    src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
-                    alt="">
-                <h6>Jewllery</h6>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-diamond" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#00AEE1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6 5h12l3 5l-8.5 9.5a0.7 .7 0 0 1 -1 0l-8.5 -9.5l3 -5" />
+                    <path d="M10 12l-2 -2.2l.6 -1" />
+                </svg>
+                <h6>Joyería</h6>
             </a>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container text-center">
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filters:searchKey:'title'">
-            <div class="card col-md-3">
-                <img src="{{item.image}}" alt="" (click)=openDetailproduct(item.id)>
-                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+            <div class="card col-md-2">
+                <div class="img-aline">
+                    <img quality="auto" class="pointer" src="{{item.image}}"  (click)=openDetailproduct(item.id)>
+                </div>
+                <h5 class="text-card">
                     {{item.title}}</h5>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                <p class="text-card " >
                     {{item.description}}</p>
-                <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-dark" (click)=addtocart(item)>Add to cart</button>
+                <p><strong>Price: </strong>{{item.price}}Bs</p>
+                <button class="btn" (click)=addtocart(item)>Add to cart</button>
             </div>
         </ng-container>
-
     </div>
 </div>
