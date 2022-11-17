@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+* {
+    font-family: 'Poppins';
+}
 .card-top {
     position: relative;
     display: flex;
@@ -9,6 +13,9 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: .25rem;
 }
+.pointer{
+    cursor: pointer;
+}
 
 .item img {
     width: 64px;
@@ -18,19 +25,32 @@
     margin: 0px 15px;
     text-align: center;
 }
-
-.item a:hover {
-    color: red;
+h5{
+    color:#0A457F ;
+    font-weight:bolder;
+}
+h6{
+    color: #00AEE1;
+}
+h6:hover {
+    color: #0A457F;
 }
 
 .card {
     padding: 20px;
-    margin: 50px;
+    margin: 20px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
-
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+.img-aline{
+    text-align: center;
+}
 .card img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 15px;
     transition: 0.3s ease-in-out;
 }
@@ -38,4 +58,20 @@
 .card img:hover {
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
+}
+.btn{
+    background-color: #00AEE1;
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    background-color: #0A457F;
+}
+
+.text-card{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
 }
