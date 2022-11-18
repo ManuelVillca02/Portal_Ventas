@@ -28,14 +28,14 @@ export class SignupComponent implements OnInit {
     .subscribe(res=>{
       if(this.signupForm.controls['password'].value==this.signupForm.controls['passwordConfirm'].value){
         if(res.isOk==true){
-          alert("Signup Successfull");
+          alert("Registro Exitoso");
           this.signupForm.reset();
           this.router.navigate(['login']);
         }else{
           alert(res.msj);
         }
       }else{
-        alert("The passwords are not the same");
+        alert("Las Contraseñas no Coinciden");
       }
       
       

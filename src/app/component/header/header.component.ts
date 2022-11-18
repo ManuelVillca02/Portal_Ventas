@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   public totalItem : number = 0;
   public emailSession : any = sessionStorage.getItem('email');
   public nameSession : any = sessionStorage.getItem('name');
-  public logintext: string = 'Login';
+  public logintext: string = 'Iniciar Sesión';
   public searchTerm !: string;
   constructor(private cartService : CartService, private router : Router) { }
 
@@ -20,13 +20,15 @@ export class HeaderComponent implements OnInit {
     this.cartService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
+      console.log(res.length);
       this.emailSession =sessionStorage.getItem('email');
       this.nameSession = sessionStorage.getItem('name');
       if(this.emailSession==''||this.emailSession==null){
-        this.logintext = 'Login';
+        this.logintext = 'Iniciar Sesión';
       }else{
-        this.logintext = 'LogOut';
+        this.logintext = 'Cerrar Sesión';
       }
+      
     })
   }
   search(event:any){
@@ -36,15 +38,12 @@ export class HeaderComponent implements OnInit {
   }
 
   loginNavi(){
-    if(this.logintext == 'Login'){
+    if(this.logintext == 'Iniciar Sesión'){
       this.router.navigate(['login']);
     }else{
-      this.logintext = 'Login'
+      this.logintext = 'Iniciar Sesión'
       this.router.navigate(['products']);
-      sessionStorage.setItem('email', ''); 
-      sessionStorage.setItem('name', '');
-      sessionStorage.setItem('lname', '');
-      //location.reload();
+      this.cartService.logOutSession();
     }
     
   }

@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
         this.productList = res;
         this.filterCategory = res;
         this.productList.forEach((a: any) => {
-          if (a.category === "women's clothing" || a.category === "men's clothing") {
+          if (a.category === "women's clothing" || a.category === "men's clothing") {//revisar
             a.category = "fashion"
           }
           Object.assign(a, { quantity: 1, total: a.price });
@@ -35,6 +35,7 @@ export class ProductsComponent implements OnInit {
   }
   addtocart(item: any) {
     this.cartService.addtoCart(item);
+    alert("Producto añadido al carrito");
   }
   filter(category: string) {
     this.filterCategory = this.productList

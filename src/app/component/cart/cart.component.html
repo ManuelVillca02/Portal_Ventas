@@ -6,11 +6,11 @@
                     <thead class="bg-light table-light">
                         <tr class="text-th">
                             <th class="td-tx">Sr.No</th>
-                            <th class="td-tx">Product Name</th>
-                            <th class="td-tx">Product Image</th>
-                            <th class="td-tx" style="text-align: center;">Price</th>
-                            <th class="td-tx" style="text-align: center;">Quantity</th>
-                            <th class="td-tx" style="text-align: center;">Total</th>
+                            <th class="td-tx">Nombre Producto</th>
+                            <th class="td-tx">Imagen Producto</th>
+                            <th class="td-tx" style="text-align: center;">Precio</th>
+                            <th class="td-tx" style="text-align: center;">Cantidad</th>
+                            <th class="td-tx" style="text-align: center;">Sub Total</th>
                             <td></td>
                         </tr>
                     </thead>
@@ -32,14 +32,14 @@
             </div>
 
             <div class="cont-total">
-                <p style="font-size: 18px; font-weight: bold; padding: 10px;">Grand Total: </p>
+                <p style="font-size: 18px; font-weight: bold; padding: 10px;">Total: </p>
                 <p style="margin-left: 15px; padding: 10px; background-color: #b4daff;"> ${{grandTotal}}</p>
             </div>
 
             <div class="cont-btn">
-                <button (click)="emptycart()" class="btn btn-b btn-danger">Empty Cart</button>
-                <button routerLink="/products" class="btn btn-shop btn-b">Shop More</button>
-                <button class="btn btn-b btn-success" (click)="goCheckout()">Checkout</button>
+                <button (click)="emptycart()" class="btn btn-b btn-danger">Cartera Vacía</button>
+                <button routerLink="/products" class="btn btn-shop btn-b">Comprar Más</button>
+                <button class="btn btn-b btn-success" (click)="goCheckout()">Finalizar Compra</button>
             </div>
 
             
