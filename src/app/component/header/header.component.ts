@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
 
   loginNavi(){
     if(this.logintext == 'Iniciar Sesión'){
-      this.router.navigate(['login']);
+      this.router.navigate(['loginportal']);
     }else{
       this.logintext = 'Iniciar Sesión'
       this.router.navigate(['products']);
