@@ -1,43 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
 
 body {
     background: #f6f5f7;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
 }
-
+.btn-close{
+    margin-left: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
 h2 {
-    align-content: center;
+    color:#0A457F ;
+    text-align: center;
+    font-weight:bolder;
+}
+
+.p-d{
+    font-size: 20px;
+}
+.p-size{
+    font-size: 20px;
+    font-weight:600;
 }
 
 p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
-    color: #222;
-}
-
-h1 {
-    color: #222;
-    font-weight: bold;
-    margin: 0;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 15px;
+    margin: 10px 0 10px;
+    color: rgb(75, 74, 74);
+    text-align: center;
 }
 
 .container-img {
     position: absolute;
     left: 100px;
-    top: 70px;
+    margin-top: 70px;
 }
 
 .images img {
@@ -45,11 +52,14 @@ h1 {
     height: 300px;
 }
 
-a {
-    color: #333;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 15px 0;
+.btn{
+    background-color: #00AEE1;
+    color: white;
+    width: 75%;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    background-color: #0A457F;
 }
 
 .container {
@@ -60,6 +70,7 @@ a {
     position: relative;
     overflow: hidden;
     width: 1000px;
+    margin-top: 60px;
     max-width: 100%;
     min-height: 480px;
 }
@@ -89,20 +100,17 @@ a {
     width: 200%;
 }
 
-
 .detail-panel {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     padding: 0 40px;
-    text-align: center;
     top: 0;
     height: 100%;
     width: 50%;
 }
-
 
 .detail-right {
     right: 0;

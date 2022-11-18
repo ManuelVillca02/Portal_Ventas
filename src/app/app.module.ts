@@ -13,6 +13,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './component/signup/signup.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { DetailproductComponent } from './component/detailproduct/detailproduct.component';
+import { LoginportalComponent } from './component/loginportal/loginportal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailproductComponent } from './component/detailproduct/detailproduct.
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
-    DetailproductComponent
+    DetailproductComponent,
+    LoginportalComponent
   ],
   imports: [
     BrowserModule,

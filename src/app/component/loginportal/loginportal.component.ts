@@ -5,12 +5,11 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-loginportal',
+  templateUrl: './loginportal.component.html',
+  styleUrls: ['./loginportal.component.scss']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginportalComponent implements OnInit {
   public loginForm!: FormGroup;
   redirectTo(uri:string){
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
