@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 import { ProductsComponent } from 'src/app/component/products/products.component';
 import { CartService } from 'src/app/service/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detailproduct',
@@ -13,7 +14,7 @@ export class DetailproductComponent implements OnInit {
   public detailList: any;
   public filterCategory: any;
   public product: any;
-  constructor(private api: ApiService, private cartService: CartService) { }
+  constructor(private api: ApiService, private cartService: CartService, private router : Router) { }
 
   ngOnInit(): void {
     this.api.getProduct()
@@ -35,6 +36,8 @@ export class DetailproductComponent implements OnInit {
 
   addtocart(item: any) {
     this.cartService.addtoCart(item);
+    alert("Producto añadido al carrito");
+    this.router.navigate(['products']);
   }
 
 }

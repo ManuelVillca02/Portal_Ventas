@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkoutGo(){
-    alert("Your order has been placed, check your email for details");
+    alert("Tu pedido se realizó con éxito");
     this.cartService.removeAllCart();
     this.router.navigate(['cart']);
   }

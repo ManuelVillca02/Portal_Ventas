@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
     if(sessionStorage.getItem('name')!=''){
       this.router.navigate(['checkout']);
     }else{
-      alert("You have to login");
+      alert("Debes Iniciar Sesión");
     }
   }
 

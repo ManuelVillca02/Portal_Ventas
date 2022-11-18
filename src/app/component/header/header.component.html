@@ -6,9 +6,9 @@
                 
                 </i>
             </button>
-            <strong style="font-size: 30px;">Cart</strong>
+            <strong style="font-size: 30px;">Productos</strong>
             <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Buscar Productos">
             </div>
             <span class="fas fa-search search-icon"></span>
             &nbsp; &nbsp; 
@@ -18,7 +18,7 @@
             &nbsp; &nbsp; 
             
             <button class="btn btn-dark" (click)=loginNavi()>{{ logintext }}</button>
-            <button class="btn btn-dark" (click)=registerNavi()>Sign Up</button>
+            <button class="btn btn-dark" (click)=registerNavi()>Registro</button>
         </div>
         
         <button routerLink="cart" class="btn btn-dark">
