@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
   }
 
   goCheckout(){
-    if(sessionStorage.getItem('name')!=''){
+    if(sessionStorage.getItem('name')!=''&&sessionStorage.getItem('name')!=null){
       this.router.navigate(['checkout']);
     }else{
       alert("Debes Iniciar Sesión");
