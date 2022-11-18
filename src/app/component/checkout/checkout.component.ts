@@ -3,14 +3,16 @@ import { CartService } from 'src/app/service/cart.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.scss']
 })
-export class CartComponent implements OnInit {
-
+export class CheckoutComponent implements OnInit {
   public products : any = [];
   public grandTotal !: number;
+  public first_name : any = sessionStorage.getItem('name');
+  public last_name : any = sessionStorage.getItem('lname');
+  public email : any = sessionStorage.getItem('email');
   constructor(private cartService : CartService, private router : Router) { }
 
   ngOnInit(): void {
@@ -20,19 +22,11 @@ export class CartComponent implements OnInit {
       this.grandTotal = this.cartService.getTotalPrice();
     })
   }
-  removeItem(item: any){
-    this.cartService.removeCartItem(item);
-  }
-  emptycart(){
-    this.cartService.removeAllCart();
-  }
 
-  goCheckout(){
-    if(sessionStorage.getItem('name')!=''){
-      this.router.navigate(['checkout']);
-    }else{
-      alert("Debes Iniciar Sesión");
-    }
+  checkoutGo(){
+    alert("Tu pedido se realizó con éxito");
+    this.cartService.removeAllCart();
+    this.router.navigate(['cart']);
   }
 
 }
