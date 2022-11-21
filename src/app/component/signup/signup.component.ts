@@ -24,24 +24,33 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(){
-    this.http.post<any>("http://localhost:3500/crear-usuario", this.signupForm.value)
-    .subscribe(res=>{
-      if(this.signupForm.controls['password'].value==this.signupForm.controls['passwordConfirm'].value){
-        if(res.isOk==true){
-          alert("Registro Exitoso");
-          this.signupForm.reset();
-          this.router.navigate(['login']);
-        }else{
-          alert(res.msj);
-        }
-      }else{
-        alert("Las Contraseñas no Coinciden");
+    let band = true;
+      if(this.signupForm.controls['first_name'].value==''||this.signupForm.controls['last_name'].value==''||this.signupForm.controls['email'].value==''||this.signupForm.controls['password'].value==''||this.signupForm.controls['passwordConfirm'].value==''){
+        alert("Ingrese datos");
+        band=false;
       }
-      
-      
-    },err=>{
-      alert("Something went wrong")
-    })
+      if(band){
+        this.http.post<any>("http://localhost:3500/crear-usuario", this.signupForm.value)
+        .subscribe(res=>{
+          
+          if(this.signupForm.controls['password'].value==this.signupForm.controls['passwordConfirm'].value){
+            if(res.isOk==true){
+              alert("Registro Exitoso");
+              this.signupForm.reset();
+              this.router.navigate(['login']);
+            }else{
+              alert(res.msj);
+            }
+          }else{
+            alert("Las Contraseñas no Coinciden");
+          }
+          
+          
+        },err=>{
+          alert("Something went wrong")
+        })
+      }
+    
   }
 
 }

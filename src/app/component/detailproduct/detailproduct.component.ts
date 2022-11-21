@@ -40,4 +40,8 @@ export class DetailproductComponent implements OnInit {
     this.router.navigate(['products']);
   }
 
+  backClose(){
+    this.router.navigate(['products']);
+  }
+
 }
