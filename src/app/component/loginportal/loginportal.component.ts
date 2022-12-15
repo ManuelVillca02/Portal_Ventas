@@ -25,7 +25,7 @@ export class LoginportalComponent implements OnInit {
   }
 
   login(){
-    this.http.post<any>("http://localhost:3500/iniciar-sesion", this.loginForm.value)
+    this.http.post<any>("http://54.167.87.65:3500/iniciar-sesion", this.loginForm.value)
     .subscribe(res=>{
       if(res.isOk==true){
         this.router.navigate(['products']);

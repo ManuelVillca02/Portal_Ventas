@@ -30,14 +30,14 @@ export class SignupComponent implements OnInit {
         band=false;
       }
       if(band){
-        this.http.post<any>("http://localhost:3500/crear-usuario", this.signupForm.value)
+        this.http.post<any>("http://54.167.87.65:3500/crear-usuario", this.signupForm.value)
         .subscribe(res=>{
           
           if(this.signupForm.controls['password'].value==this.signupForm.controls['passwordConfirm'].value){
             if(res.isOk==true){
               alert("Registro Exitoso");
               this.signupForm.reset();
-              this.router.navigate(['login']);
+              this.router.navigate(['loginportal']);
             }else{
               alert(res.msj);
             }
